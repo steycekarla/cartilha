@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    background-color: #2D1650; /* Roxo profundo base */
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. COMPONENTE: ONDA DO TOPO PADRÃO
+   ========================================= */
+.onda-topo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 10;
+}
+
+.onda-topo svg {
+    width: 100%;
+    height: auto;
+}
+
+/* =========================================
+   3. ESTRUTURA GLOBAL DAS PÁGINAS
+   ========================================= */
+.pagina-container {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.conteudo {
+    position: relative;
+    z-index: 5;
+    padding-top: 200px;
+    animation: fadeIn 1s ease-out;
+}
+
+.titulo-sessao {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   4. SEÇÃO: VIOLENTÔMETRO
+   ========================================= */
+.container-violentometro {
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+.bloco-termometro {
+    flex: 1;
+    max-width: 240px;
+    display: flex;
+    align-items: center;
+}
+
+.img-termometro {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.bloco-categories {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.categoria-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    text-align: left;
+}
+
+.categoria-header {
+    min-width: 150px;
+}
+
+.categoria-header h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2rem;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.categoria-header p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+    line-height: 1.2;
+}
+
+.chave-separadora {
+    font-size: 5.5rem;
+    font-weight: 300;
+    color: #ffffff;
+    line-height: 1;
+    font-family: sans-serif;
+    user-select: none;
+}
+
+.lista-sintomas {
+    list-style: none;
+}
+
+.lista-sintomas li {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 2px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================
+   5. COMPONENTES DAS OUTRAS PÁGINAS
+   ========================================= */
+.texto-informativo p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.box-citacao {
+    position: relative;
+    margin-top: 50px;
+    padding: 40px 30px;
+    background-color: rgba(186, 161, 230, 0.1);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.aspas-abrir, .aspas-fechar {
+    color: #C026D3;
+    font-size: 2.5rem;
+    position: absolute;
+    opacity: 0.6;
+}
+
+.aspas-abrir { top: 10px; left: 10px; }
+.aspas-fechar { bottom: 10px; right: 10px; }
+
+.texto-quote {
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.autor-quote {
+    display: block;
+    color: #BAA1E6;
+    font-weight: bold;
+}
+
+.lista-sinais {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.lista-sinais li {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-left: 4px solid #C026D3;
+}
+
+.lista-sinais li strong {
+    color: #BAA1E6;
+}
+
+.container-grafico, .container-ilustracao {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.img-grafico, .img-final {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* =========================================
+   6. NAVEGAÇÃO E BOTÕES
+   ========================================= */
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.btn-voltar, .btn-proximo {
+    color: #BAA1E6;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #BAA1E6;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover, .btn-proximo:hover {
+    background-color: #BAA1E6;
+    color: #2D1650;
+}
+
+/* =========================================
+   7. ANIMAÇÕES
+   ========================================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   8. TELA ESPECÍFICA: CITAÇÃO SIMONE DE BEAUVOIR
+   ========================================= */
+.container-pagina-citacao {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 0 40px;
+    /* Altere 'seu-simbolo.png' para o caminho da sua imagem com o símbolo feminista de fundo */
+    background-image: url('seu-simbolo.png');
+    background-size: auto 65%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.onda-topo-dupla {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 10;
+}
+
+.onda-rodape-dupla {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 10;
+}
+
+.conteudo-citacao-tela {
+    position: relative;
+    z-index: 15;
+    max-width: 650px;
+    text-align: center;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.box-citacao-pagina {
+    position: relative;
+    padding: 20px 0;
+}
+
+.texto-quote-pagina {
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    line-height: 1.5;
+    font-weight: bold;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 25px;
+}
+
+.autor-quote-pagina {
+    font-family: monospace; /* Preserva o visual estilizado da máquina de escrever da foto */
+    font-size: 1.4rem;
+    color: #ffffff;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.aspas-customizada {
+    font-size: 5rem;
+    color: #C026D3;
+    position: absolute;
+    font-family: serif;
+    line-height: 1;
+    opacity: 0.9;
+}
+
+.aspas-topo {
+    top: -45px;
+    left: -40px;
+}
+
+.aspas-base {
+    bottom: -15px;
+    right: -30px;
+}
+
+.navegacao-citacao {
+    position: absolute;
+    bottom: 40px;
+    width: calc(100% - 80px);
+    max-width: 850px;
+    z-index: 20;
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+/* =========================================
+   9. RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 768px) {
+    .conteudo { padding-top: 150px; }
+    
+    .container-violentometro {
+        flex-direction: column;
+        align-items: center;
+    }
+    .bloco-termometro {
+        max-width: 180px;
+    }
+    .bloco-categorias {
+        gap: 40px;
+    }
+    
+    .container-pagina-citacao {
+        background-size: auto 50%;
+    }
+    .aspas-topo { left: -15px; }
+    .aspas-base { right: -15px; }
+}
+
+@media (max-width: 580px) {
+    .categoria-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .chave-separadora {
+        display: none;
+    }
+}
